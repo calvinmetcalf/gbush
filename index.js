@@ -49,6 +49,14 @@ GeoBush.prototype.search = function(bbox){
 }
 
 GeoBush.prototype.remove = function(item){
-  this.rbush.remove(this.store.get(item));
+  var geojson = this.store.get(item);
+  this.store.delete(item);
+  this.store.delete(geojson);
+  this.rbush.remove(item);
   return this;
+}
+
+GeoBush.prototype.clear = function(){
+  this.rbush.clear();
+  this.store.clear();
 }
