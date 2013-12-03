@@ -1,6 +1,6 @@
 {
   "name": "rbush.geojson",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "rbush, with geojson",
   "main": "index.js",
   "scripts": {
