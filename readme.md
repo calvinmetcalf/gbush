@@ -1,7 +1,7 @@
 gbush
 ====
 
-geojson wrapper for rbush, requires harmony flags set (or firefox), same as rbush, just with geojson, impliments
+geojson wrapper for [rbush](https://github.com/mourner/rbush), requires harmony flags set (or firefox), same as rbush, just with geojson, impliments
 
 - insert
 - load

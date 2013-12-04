@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:calvinmetcalf/rbush.geojson.git"
+    "url": "git@github.com:calvinmetcalf/gbush.git"
   },
   "keywords": [
     "rbush",
@@ -18,7 +18,7 @@
   "author": "Calvin Metcalf",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/calvinmetcalf/rbush.geojson/issues"
+    "url": "https://github.com/calvinmetcalf/gbush/issues"
   },
   "dependencies": {
     "rbush": "~1.3.2",
