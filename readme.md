@@ -1,4 +1,12 @@
-rbush.geojson
+gbush
 ====
 
-geojson wrapper for rbush, curently I need to actually test if it runs or not, also load symantics, requests harmony JavaScript features (WeakMap), because why not.  I may remove that around when I check if it actually runs. 
+geojson wrapper for rbush, requires harmony flags set (or firefox), same as rbush, just with geojson, impliments
+
+- insert
+- load
+- search
+- delete
+- clear
+
+`npm install gbush` or `<script src='dist/gbush.js></script>`

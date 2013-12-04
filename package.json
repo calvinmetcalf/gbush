@@ -1,10 +1,11 @@
 {
-  "name": "rbush.geojson",
+  "name": "gbush",
   "version": "0.0.1",
   "description": "rbush, with geojson",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'sorry'"
+    "test": "node --harmony ./node_modules/istanbul/lib/cli.js test ./node_modules/mocha/bin/_mocha test/test.js",
+    "build": "mkdir -p dist && browserify -o dist/gbush.js -s gbush index.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,11 @@
   "dependencies": {
     "rbush": "~1.3.2",
     "geojson-bounding-volume": "~0.1.1"
+  },
+  "devDependencies": {
+    "chai": "~1.8.1",
+    "mocha": "~1.15.1",
+    "istanbul": "~0.1.46",
+    "browserify": "~2.36.1"
   }
 }

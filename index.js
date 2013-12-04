@@ -17,7 +17,8 @@ function GeoBush(maxEntries){
 
 GeoBush.prototype.insert = function(feature){
   if(Array.isArray(feature)||feature.type === 'FeatureCollection'){
-    this.bulkInsert(feature);
+    this.load(feature);
+    return this;
   }
   var coords = format(gbv(feature.geometry));
   this.store.set(coords,feature);
@@ -37,6 +38,7 @@ GeoBush.prototype.load = function(geojson){
     var coord = format(gbv(feature.geometry));
     this.store.set(coord,feature);
     this.store.set(feature,coord);
+    return coord;
   }, this);
   this.rbush.load(coords);
   return this;
@@ -49,14 +51,16 @@ GeoBush.prototype.search = function(bbox){
 }
 
 GeoBush.prototype.remove = function(item){
-  var geojson = this.store.get(item);
+  var bbox = this.store.get(item);
   this.store.delete(item);
-  this.store.delete(geojson);
-  this.rbush.remove(item);
+  this.store.delete(bbox);
+  this.rbush.remove(bbox);
   return this;
 }
 
 GeoBush.prototype.clear = function(){
   this.rbush.clear();
-  this.store.clear();
+  return this;
 }
+
+module.exports = GeoBush;
